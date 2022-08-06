@@ -4,6 +4,11 @@
     font-family: sans-serif;
 }
 
+svg {
+    width: 25px;
+    height: 25px;
+}
+
 :root {
     --light-color: #FFF1DB;
     --dark-color: #2A2A2A;
