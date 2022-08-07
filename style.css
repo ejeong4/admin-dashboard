@@ -2,15 +2,19 @@
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    color: var(--dark-color);
 }
 
 svg {
     width: 25px;
     height: 25px;
+    fill: var(--dark-color);
 }
 
 :root {
-    --light-color: #FFF1DB;
+    --light-color: #fff2e7;
+    --second-light-color: #e4cfb7;
+    --third-light-color: #e4c19a;
     --dark-color: #2A2A2A;
     --highlight-1: #f5a930;
     --highlight-2: #5092Ab;
@@ -18,23 +22,31 @@ svg {
 }
 
 .container {
-    border: 1px solid blue;
     display: grid;
     grid-template-columns: 1fr 4fr;
+    background-color: var(--second-light-color);
 }
 
 .dashboard {
-    border: 1px solid blue;
     grid-row-start: 1;
     grid-row-end: 4;
     padding: 20px;
     display: grid;
     grid-template-rows: 70px 300px 200px;
+    gap: 30px;
+    background-color: var(--highlight-3);
+}
+
+.dashboard>div {
+    display: grid;
+    grid-template-rows: repeat(auto-fit, 50px);
+    grid-template-columns: 30px 1fr;
+    column-gap: 20px;
 }
 
 .header {
-    border: 1px solid blue;
     padding: 15px;
+    background-color: var(--light-color);
 }
 
 .nav-bar {
@@ -48,7 +60,9 @@ svg {
 .search-bar {
     height: 25px;
     width: 500px;
-    background-color: rgb(201, 201, 201);
+    background-color: var(--third-light-color);
+    border-radius: 20px;
+    border: 0px none;
 }
 
 .action-bar {
@@ -56,6 +70,7 @@ svg {
     grid-template-columns: 1fr 500px repeat(4, 1fr);
     justify-items: center;
     align-items: center;
+    column-gap: 5px;
 }
 
 .welcome {
@@ -67,8 +82,11 @@ svg {
 }
 
 button {
-    width: 100px;
+    width: 80px;
     height: 30px;
+    background-color: var(--highlight-2);
+    border: 0px none;
+    border-radius: 20px;
 }
 
 .main {
@@ -83,7 +101,8 @@ button {
 .projects {
     grid-row: 1 / 4;
     display: grid;
-    gap: 20px;
+    gap: 30px;
+    row-gap: 40px;
     grid-template: 30px repeat(6, 1fr) / repeat(auto-fit, 350px);
 }
 
@@ -91,13 +110,12 @@ button {
     grid-column: 1 / -1;
 }
 
-.projects>div,
-.projects>h3 {
-    border: 1px solid red;
-}
-
 .project {
-    height: 200px;
+    height: 160px;
+    background-color: var(--light-color);
+    border-radius: 40px;
+    box-shadow: 0 25px 15px var(--third-light-color);
+    padding: 20px;
 }
 
 .announce,
@@ -109,12 +127,12 @@ button {
 
 .announcements,
 .trending-tags {
-    border: 1px solid red;
     display: grid;
     padding: 20px;
+    background-color: var(--light-color);
+    border-radius: 30px;
+    box-shadow: 0 25px 15px var(--third-light-color);
 }
 
 .announcement,
-.trending-tag {
-    border: 1px solid red;
-}
+.trending-tag {}
