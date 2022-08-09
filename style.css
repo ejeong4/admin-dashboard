@@ -1,8 +1,23 @@
+@font-face {
+    font-family: "glacial";
+    src: url(fonts/GlacialIndifference-Regular.otf);
+}
+
+@font-face {
+    font-family: "lemon";
+    src: url(fonts/LEMONMILK-Bold.otf);
+}
+
 * {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
     color: var(--dark-color);
+    font-family: "glacial", sans-serif;
+}
+
+h1 {
+    font-weight: bold;
 }
 
 svg {
@@ -42,6 +57,12 @@ svg {
     grid-template-rows: repeat(auto-fit, 50px);
     grid-template-columns: 30px 1fr;
     column-gap: 20px;
+    align-items: center;
+}
+
+.dashboard h3,
+.dashboard h1 {
+    color: var(--second-light-color);
 }
 
 .header {
@@ -51,10 +72,23 @@ svg {
 
 .nav-bar {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(2, max-content) 1fr repeat(3, max-content);
     padding: 20px;
     justify-items: center;
     align-items: center;
+    column-gap: 40px;
+}
+
+.bell {
+    grid-column: 4 / 5;
+}
+
+.nav-profile {
+    grid-column: 5 / 6;
+}
+
+.name {
+    grid-column: 6 / 7;
 }
 
 .search-bar {
@@ -71,6 +105,10 @@ svg {
     justify-items: center;
     align-items: center;
     column-gap: 5px;
+}
+
+.action-bar>button {
+    color: var(--light-color);
 }
 
 .welcome {
@@ -101,9 +139,9 @@ button {
 .projects {
     grid-row: 1 / 4;
     display: grid;
-    gap: 30px;
+    gap: 20px;
     row-gap: 40px;
-    grid-template: 30px repeat(6, 1fr) / repeat(auto-fit, 350px);
+    grid-template: 30px repeat(6, 1fr) / repeat(auto-fit, 390px);
 }
 
 .project-header {
@@ -111,7 +149,7 @@ button {
 }
 
 .project {
-    height: 160px;
+    height: 180px;
     background-color: var(--light-color);
     border-radius: 40px;
     box-shadow: 0 25px 15px var(--third-light-color);
@@ -134,5 +172,17 @@ button {
     box-shadow: 0 25px 15px var(--third-light-color);
 }
 
-.announcement,
-.trending-tag {}
+.trending-tag {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    column-gap: 20px;
+    align-items: center;
+}
+
+.tag-descript {
+    grid-column-start: 2;
+}
+
+.profile {
+    height: 50px;
+}
