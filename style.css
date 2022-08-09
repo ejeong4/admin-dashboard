@@ -8,6 +8,18 @@
     src: url(fonts/LEMONMILK-Bold.otf);
 }
 
+:root {
+    --light-color: #fff2e7;
+    --hover-color: #fff9f4;
+    --second-light-color: #e4cfb7;
+    --third-light-color: #e4c19a;
+    --p-color: #be9f64;
+    --dark-color: #2A2A2A;
+    --highlight-1: #f5a930;
+    --highlight-2: #5092Ab;
+    --highlight-3: #c11e75;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -16,24 +28,29 @@
     font-family: "glacial", sans-serif;
 }
 
+p {
+    color: var(--p-color);
+}
+
 h1 {
     font-weight: bold;
+}
+
+h5 {
+    font-size: 0.9rem;
 }
 
 svg {
     width: 25px;
     height: 25px;
-    fill: var(--dark-color);
 }
 
-:root {
-    --light-color: #fff2e7;
-    --second-light-color: #e4cfb7;
-    --third-light-color: #e4c19a;
-    --dark-color: #2A2A2A;
-    --highlight-1: #f5a930;
-    --highlight-2: #5092Ab;
-    --highlight-3: #c11e75;
+.dashboard svg {
+    fill: var(--second-light-color);
+}
+
+hr {
+    border: 0.5px solid var(--second-light-color);
 }
 
 .container {
@@ -65,6 +82,12 @@ svg {
     color: var(--second-light-color);
 }
 
+.dashboard h3:hover,
+.dashboard h1:hover {
+    text-decoration: 2px underline var(--second-light-color);
+    cursor: pointer;
+}
+
 .header {
     padding: 15px;
     background-color: var(--light-color);
@@ -77,6 +100,11 @@ svg {
     justify-items: center;
     align-items: center;
     column-gap: 40px;
+}
+
+.nav-bar svg:hover,
+.nav-bar h4:hover {
+    cursor: pointer;
 }
 
 .bell {
@@ -120,11 +148,19 @@ svg {
 }
 
 button {
-    width: 80px;
-    height: 30px;
+    width: 100px;
+    height: 40px;
     background-color: var(--highlight-2);
     border: 0px none;
     border-radius: 20px;
+    font-size: 1.1rem;
+}
+
+button:hover {
+    width: 102px;
+    height: 42px;
+    background-color: #48869c;
+    cursor: pointer;
 }
 
 .main {
@@ -133,6 +169,7 @@ button {
     display: grid;
     grid-template: repeat(2, 300px) / 3fr 1fr;
     gap: 20px;
+    row-gap: 100px;
     padding: 20px;
 }
 
@@ -154,6 +191,16 @@ button {
     border-radius: 40px;
     box-shadow: 0 25px 15px var(--third-light-color);
     padding: 20px;
+    display: grid;
+    grid-template-rows: repeat(2, max-content);
+    gap: 10px;
+}
+
+.project:hover {
+    height: 178px;
+    box-shadow: 0 6px 5px var(--third-light-color);
+    cursor: pointer;
+    background-color: var(--hover-color);
 }
 
 .announce,
@@ -163,6 +210,16 @@ button {
     gap: 5px;
 }
 
+.announce:hover,
+.trending:hover {
+    cursor: pointer;
+}
+
+.announce p,
+.trending p {
+    font-size: 0.85rem;
+}
+
 .announcements,
 .trending-tags {
     display: grid;
@@ -170,6 +227,7 @@ button {
     background-color: var(--light-color);
     border-radius: 30px;
     box-shadow: 0 25px 15px var(--third-light-color);
+    gap: 15px;
 }
 
 .trending-tag {
