@@ -102,8 +102,9 @@ hr {
     column-gap: 40px;
 }
 
-.nav-bar svg:hover,
-.nav-bar h4:hover {
+.nav-bar img:hover,
+.nav-bar h4:hover,
+.nav-bar svg:hover {
     cursor: pointer;
 }
 
@@ -200,8 +201,15 @@ button:hover {
     fill: var(--p-color);
 }
 
-.project div {
+.project svg:hover {
+    fill: #977c4b;
+}
+
+.project-actions {
+    display: grid;
     justify-self: end;
+    grid-template-columns: repeat(3, max-content);
+    gap: 30px;
 }
 
 .project:hover {
@@ -250,5 +258,16 @@ button:hover {
 }
 
 .profile {
-    height: 50px;
+    object-fit: cover;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+}
+
+.small-profile {
+    object-fit: cover;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    fill: var(--highlight-2);
 }
